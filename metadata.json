@@ -1,0 +1,7 @@
+{
+  "name": "ASCII Art",
+  "description": "Real-time camera to ASCII art converter with high-detail local rendering.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
