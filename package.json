@@ -1,0 +1,81 @@
+{
+  "name": "ascii-art",
+  "private": true,
+  "version": "1.1.0",
+  "description": "Real-time camera-to-ASCII desktop application.",
+  "homepage": "https://example.com/ascii-art",
+  "author": {
+    "name": "ASCII Art Team",
+    "email": "team@local.invalid"
+  },
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pack:win": "npm run build && electron-builder --win --x64",
+    "pack:linux": "npm run build && electron-builder --linux AppImage deb --x64",
+    "pack:all": "npm run build && electron-builder --win --linux --x64"
+  },
+  "dependencies": {
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "electron": "^41.2.1",
+    "electron-builder": "^26.0.12",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "build": {
+    "appId": "com.ascii.art",
+    "productName": "ASCII Art",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Utility",
+      "maintainer": "ASCII Art Team <team@local.invalid>"
+    }
+  }
+}
