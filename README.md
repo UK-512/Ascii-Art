@@ -1,86 +1,127 @@
-# ASCII Art (v1.1)
+# ASCII Art (Non-AI Edition)
 
-Real-time camera-to-ASCII renderer with local processing only.
+Real-time ASCII camera renderer built entirely in the browser — no AI, no backend, no data collection.
 
-## Prerequisites
+---
 
-- Node.js 18+ (recommended: Node.js 20 LTS)
-- npm 9+
-- Camera permission in browser
-- Secure context for camera access:
-  - `http://localhost` for local development, or
-  - `https://` in deployed environments
+## 🔥 Why This Project Exists
 
-## Setup
+Most modern tools overcomplicate simple problems with AI pipelines.
 
-1. Install dependencies:
-   - `npm install`
-2. Start development server:
-   - `npm run dev`
-3. Open the local URL shown by Vite (typically `http://localhost:3000`)
-4. Allow camera access when prompted
+This project does the opposite:
 
-## Build and Preview
+- No AI models
+- No API calls
+- No data leaving your device
 
-1. Production build:
-   - `npm run build`
-2. Preview build locally:
-   - `npm run preview`
+Just pure client-side image processing.
 
-## Desktop Packaging (Electron)
+---
 
-This project supports desktop builds for Windows and Linux.
+## ⚡ Features
 
-1. Build Windows installer (`.exe`):
-   - `npm run pack:win`
-2. Build Linux packages (`.AppImage` and `.deb`):
-   - `npm run pack:linux`
-3. Build both:
-   - `npm run pack:all`
+- Real-time camera → ASCII rendering
+- Fully browser-based (offline capable)
+- Zero external processing
+- Lightweight and fast
+- Adjustable detail and rendering modes
+- Mobile-aware performance optimization
 
-Artifacts are written to:
+---
 
-- `release/ASCII Art Setup 1.1.0.exe` (Windows NSIS installer, per-user/no admin)
-- `release/ASCII Art-1.1.0.AppImage` (Linux portable, no install required)
-- `release/ascii-art_1.1.0_amd64.deb` (Linux Debian package)
+## 🧠 How It Works
 
-Notes:
+1. Captures video from your camera
+2. Processes frames using Canvas API
+3. Converts brightness values into ASCII characters
+4. Renders output in real time
 
-- Windows installer is configured for local-user install (`perMachine: false`).
-- On Linux, `AppImage` is the no-admin option.
+See:
+- [Architecture](docs/architecture.md)
 
-## Usage
+---
 
-- Use the control panel to adjust:
-  - `FONT SIZE`
-  - `GAIN`
-  - `CONTRAST`
-  - `DETAIL`
-  - `MODE`
-  - `CHARSET`
-- Use the camera icon to save the current ASCII frame as PNG.
+## 🔐 Security
 
-## Security Notes
+- No external API calls
+- No data exfiltration
+- No hidden tracking
 
-- No AI inference or cloud analysis is used.
-- Rendering pipeline runs fully in-browser.
-- See [KB.md](./KB.md) for backdoor review, SBOM summary, and hardening notes.
+Full review:
+- [Security Documentation](docs/security.md)
 
-## Troubleshooting
+---
 
-- `Unable to access camera`:
-  - Confirm browser permission is allowed.
-  - Confirm you are on `localhost` or `https`.
-  - Close other apps using the camera.
-- Low FPS on mobile:
-  - Increase `FONT SIZE`.
-  - Lower `DETAIL`.
-  - Use `bw` mode.
+## 📦 Dependencies
 
-## Attribution
-This project is derived from the original [Ascii-Yourself repository](https://github.com/okaypranjul/Ascii-Yourself.git).
+Minimal and controlled dependency set.
 
-## Changes
-- Removed AI dependencies
-- Rebuilt as a non-AI offline tool
-- Simplified architecture
+- React
+- Vite
+- TypeScript
+
+See:
+- [Dependencies & SBOM](docs/dependencies.md)
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone repo
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ascii-art.git
+cd ascii-art
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run locally
+```
+npm run dev
+```
+
+---
+
+## 📱 Usage Tips
+
+For better performance:
+- Reduce detail on low-end devices
+- Use grayscale mode
+- Adjust font size
+
+---
+
+## 📄 Documentation
+
+- Architecture → docs/architecture.md
+- Security → docs/security.md
+- Dependencies → docs/dependencies.md
+- Operations → docs/operations.md
+
+---
+
+## ⚠️ Attribution
+
+This project is derived from the original repository:
+https://github.com/okaypranjul/Ascii-Yourself
+
+Major changes:
+- Removed AI-based processing
+- Rebuilt as fully local, non-AI system
+- Simplified architecture and improved transparency
+
+---
+
+## 🚀 Roadmap
+
+- CLI version
+- Image upload mode
+- Export ASCII output
+- Local asset bundling (no CDN)
+
+---
