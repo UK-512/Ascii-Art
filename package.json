@@ -13,10 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "pack:win": "npm run build && electron-builder --win --x64",
-    "pack:linux": "npm run build && electron-builder --linux AppImage deb --x64",
-    "pack:all": "npm run build && electron-builder --win --linux --x64"
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
@@ -26,8 +23,6 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
-    "electron": "^41.2.1",
-    "electron-builder": "^26.0.12",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   },
