@@ -76,3 +76,11 @@ Notes:
   - Increase `FONT SIZE`.
   - Lower `DETAIL`.
   - Use `bw` mode.
+
+## Attribution
+This project is derived from the original [Ascii-Yourself repository](https://github.com/okaypranjul/Ascii-Yourself.git).
+
+## Changes
+- Removed AI dependencies
+- Rebuilt as a non-AI offline tool
+- Simplified architecture
